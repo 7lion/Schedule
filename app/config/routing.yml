@@ -1,0 +1,11 @@
+scrape_api:
+    type:   rest
+    prefix: _/api/
+    resource: '@AppBundle/Controller/Api/Schedule/ScrapeController.php'
+schedule_api:
+    type:   rest
+    prefix: _/api/
+    resource: '@AppBundle/Controller/Api/Schedule/ScheduleController.php'
+web_test:
+    type:   annotation
+    resource: '@AppBundle/Controller/Site/DefaultController.php'

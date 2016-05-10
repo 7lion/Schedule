@@ -1,0 +1,24 @@
+
+# Parameters
+/app/config/parameters.yml
+
+# Managed by Composer
+/app/bootstrap.php.cache
+/bin/*
+!bin/console
+!bin/composer.phar
+/vendor/
+
+# Assets and user uploads
+/web/bundles/
+/web/css/
+/web/js/
+/web/uploads/
+/web/assets/
+/web/assets-dev
+/web/files/
+/web/images/
+
+# Composer PHAR
+/composer.phar
+.idea

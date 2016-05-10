@@ -1,0 +1,13 @@
+# This file is a "template" of what your parameters.yml file should look like
+parameters:
+    database_driver:   pdo_mysql
+    database_host:     127.0.0.1
+    database_port:     ~
+    database_name:     test
+    database_user:     test
+    database_password: test
+    secret:             secretKey
+    locale: en
+    site_domain: test.loc
+    kernel.debug: true
+    fantasy_data_api_primary_key: 1cbc03665c3e413a9409dbbf236191f5

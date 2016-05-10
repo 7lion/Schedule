@@ -1,0 +1,33 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/book/service_container.html
+parameters:
+    jms_serializer.serialized_name_annotation_strategy.class: JMS\Serializer\Naming\IdenticalPropertyNamingStrategy
+
+services:
+
+  request.client:
+    class: GuzzleHttp\Client
+
+  api.client:
+    class: AppBundle\Service\Api\Client
+    arguments:
+      - '@request.client'
+      - '%fantasy_data_api_primary_key%'
+      - '@logger'
+
+  api.schedule.service:
+    class: AppBundle\Service\Schedule\Api\Schedule
+    arguments: ['@api.client']
+
+  schedule.service:
+    class: AppBundle\Service\Schedule\Schedule
+    arguments:
+      - '@schedule.repository'
+      - '@doctrine.orm.default_entity_manager'
+
+
+  schedule.repository:
+      class: Doctrine\ORM\EntityRepository
+      factory: ['@doctrine', getRepository]
+      arguments:
+          - AppBundle\Entity\Schedule
