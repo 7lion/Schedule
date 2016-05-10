@@ -116,9 +116,3 @@ jms_serializer:
           app:
               namespace_prefix: "AppBundle"
               path: "%kernel.root_dir%/config/serializer"
-          web-api:
-              namespace_prefix: "AppBundle\DTO\WebApi"
-              path: "%kernel.root_dir%/config/serializer/web-api/"
-          ext-api:
-              namespace_prefix: "AppBundle\DTO\ExtApi"
-              path: "%kernel.root_dir%/config/serializer/ext-api/"
